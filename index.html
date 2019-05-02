@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    
+    <link rel="stylesheet" type="text/css" href="./style.css"></link>
+    <title>Kalkulator</title>
+
+
+    <script>
+      
+        function resetFunction(calc)
+            {
+                calc.display.value=" ";
+
+                flag=0;
+            }
+
+            function delFunction(calc)
+            {
+               // var size = calc.display.value.length;
+                calc.display.value=calc.display.value.substring(0,calc.display.value.length-1);
+            }
+
+            function evalFunction(calc)
+            {
+                n = calc.display.value;
+                result=eval(n);
+                calc.display.value=result;
+            }
+            function sinFunction(){
+                sinx= Math.sin(calc.display.value);
+                calc.display.value=sinx;
+            }
+
+            function cosFunction(){
+                cosx= Math.cos(calc.display.value);
+                calc.display.value=cosx;
+            }
+
+            function tanFunction(){
+                tanx= Math.tan(calc.display.value);
+                calc.display.value=cosx;
+            }
+
+            function percentFunction(){
+                var x=calc.display.value;
+                percentx=x/100;
+                calc.display.value=percentx;
+
+            }
+
+            function squartFunction(){
+                sqrtx=Math.sqrt(calc.display.value);
+                calc.display.value=sqrtx;
+
+            }
+
+            function eFunction(){
+                ex=Math.E;
+                calc.display.value=ex;
+
+            }
+
+            function logFunction(){
+                logx=Math.log(calc.display.value);
+                calc.display.value=logx;
+
+            }
+
+            function expFunction(){
+                expx=Math.exp(calc.display.value);
+                calc.display.value=expx;
+
+            }
+
+            function truncFunction(){
+                truncx=Math.trunc(calc.display.value);
+                calc.display.value=truncx;
+
+            }
+
+            function roundFunction(){
+                expx=Math.exp(calc.display.value);
+                calc.display.value=expx;
+
+            }
+
+        
+          
+    </script>
+</head>
+    <body>
+        <div class="container">
+            <form name="calc">
+                <div class="row screen-height">
+                    <div class="screen-container">
+                            <input id="display" type="text" name="display" value=" "  disabled contenteditable="false"  >
+                    </div>
+                </div>
+                <div class="row">
+                        <div class="col">
+                                <input class="button function" type="button" onclick="resetFunction(this.form)" value="C">
+                        </div>
+                        <div class="col">
+                                <input class="button function" type="button" onclick="eFunction(this.form)" value="e">
+                        </div>
+                        <div class="col">
+                                <input class="button" type="button" onclick="calc.display.value +='('" value="(">
+                        </div>
+                        <div class="col">
+                                <input class="button" type="button" onclick="calc.display.value +=')'" value=")">
+                        </div>
+                        <div class="col">
+                                <input class="button operator" type="button" onclick="percentFunction(this.form)" value="%">
+                        </div>
+                        <div class="col">
+                                <input class="button function" type="button" onclick="delFunction(this.form)" value="DEL">
+                        </div>
+
+                </div>
+
+                <div class="row">
+                        <div class="col">
+                                <input class="button function" type="button" onclick="logFunction(this.form)" value="log">
+                        </div>
+                        <div class="col">
+                                <input class="button function" type="button" onclick="sinFunction(this.form)" value="sin">
+                        </div>
+                        <div class="col">
+                                <input class="button" type="button" onclick="calc.display.value +=7" value="7">
+                        </div>
+                        <div class="col">
+                                <input class="button" type="button" onclick="calc.display.value +=8" value="8">
+                        </div>
+                        <div class="col">
+                                <input class="button" type="button" onclick="calc.display.value +=9" value="9">
+                        </div>
+                        <div class="col">
+                                <input class="button operator" type="button" onclick="calc.display.value +='/'" value="/">
+                        </div>
+                </div>
+                
+                
+                <div class="row">
+                        <div class="col">
+                                <input class="button function" type="button" onclick="cosFunction(this.form)" value="cos">
+                        </div>
+                        <div class="col">
+                                        <input class="button function" type="button" onclick="expFunction(this.form)" value="exp">
+                                </div>
+                        <div class="col">
+                                <input class="button" type="button" onclick="calc.display.value +=4" value="4">
+                        </div>
+                        <div class="col">
+                                <input class="button" type="button" onclick="calc.display.value +=5" value="5">
+                        </div>
+                        <div class="col">
+                                <input class="button" type="button" onclick="calc.display.value +=6" value="6">
+                        </div>
+                        <div class="col">
+                                <input class="button operator" type="button" onclick="calc.display.value +='*'" value="x">
+                        </div>
+                </div>
+
+                <div class="row">
+                        <div class="col">
+                               <input class="button operator" type="button" onclick="tanFunction(this.form)" value="tan">
+                        </div>
+                        <div class="col">
+                                        <input class="button function" type="button" onclick="truncFunction(this.form)" value="trunc">
+                                </div>
+                        <div class="col">
+                                <input class="button" type="button" onclick="calc.display.value +=1" value="1">
+                        </div>
+                        <div class="col">
+                                <input class="button" type="button" onclick="calc.display.value +=2" value="2">
+                        </div>
+                        <div class="col">
+                                <input class="button" type="button" onclick="calc.display.value +=3" value="3">
+                        </div>
+                        <div class="col">
+                                <input class="button operator" type="button" onclick="calc.display.value +='-'" value="-">
+                        </div>
+                </div>
+
+                <div class="row">
+                        <div class="col">
+                                <input class="button operator" type="button" value="√" onClick="squartFunction()">
+                        </div>
+
+                        <div class="col">
+                                <input class="button operator" type="button" onclick="roundFunction(this.form)" value="round">
+                         </div>
+                        
+                        <div class="col">
+                                <input class="button" type="button" onclick="calc.display.value +=0" value="0">
+                        </div>
+                        <div class="col">
+                                <input class="button" type="button" onclick="calc.display.value +='.'" value=".">
+                        </div>
+                        <div class="col">
+                                <input class="button function" type="button" onclick="evalFunction(this.form)" value="=">
+                        </div>
+                        <div class="col">
+                                <input class="button operator" type="button" onclick="calc.display.value +='+'" value="+">
+                        </div>
+                </div>
+        </form>
+        </div>
+    </body>
+</html>
